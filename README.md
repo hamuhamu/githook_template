@@ -1,0 +1,2 @@
+# githook_template
+どこのプロジェクトでも使えるgithookのテンプレート
