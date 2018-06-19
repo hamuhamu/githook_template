@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-message = File.read(ARGV[0])
-$regex = /refs #\d+ \S+/
-
-if !$regex.match(message)
-  puts "[Error]コミットコメントがポリシー違反しています！"
-  puts "refs #チケット番号 コメント名"
-  exit 1
-end

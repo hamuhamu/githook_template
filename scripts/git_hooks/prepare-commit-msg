@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+current_branch = `git branch | grep '*'`.chomp.sub('* ', '')
+if current_branch.match(/^feature\/(\d+).*/)
+  commit_msgs = File.readlines(ARGV[0])
+  open(ARGV[0], 'w') {|file|
+    # コミットコメントの自動挿入
+    # refs #チケット番号
+    file.print 'refs #' + $1 +' '
+    file.puts commit_msgs
+  }
+end
